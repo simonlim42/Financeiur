@@ -35,12 +35,11 @@ A Python script running as an asynchronous task periodically checks the PostgreS
    npm install axios react-chartjs-2 chart.js react-bootstrap
 
 ### 3. Run the Application:
-
 #### Start the Flask Backend:
 python backend.py
 #### Start the React Frontend (inside the project directory):
-  ```bash
-  npm start
+     ```bash
+     npm start
 #### Run the Background Task:
-  ```bash
-  python alert_service.py
+      ```bash
+     python alert_service.py
