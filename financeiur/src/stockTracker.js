@@ -195,7 +195,7 @@ function StockTracker() {
           />
           <input
             type="text"
-            placeholder='Enter your telegram chat id (e.g., 1003256893'
+            placeholder='Enter your telegram chat id (e.g., 1003256893)'
             onChange={(e) => setChatID(e.target.value)}
           />
           <button onClick={addTracker}>Add Tracker</button>
