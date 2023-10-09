@@ -36,7 +36,8 @@ A Python script running as an asynchronous task periodically checks the PostgreS
 
 ### 3. Run the Application:
 #### Start the Flask Backend:
-python backend.py
+      ```bash
+      python backend.py
 #### Start the React Frontend (inside the project directory):
      ```bash
      npm start
