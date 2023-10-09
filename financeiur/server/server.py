@@ -151,7 +151,7 @@ def update_database():
         conn.close()
         return jsonify({
             'message': 'Item added successfully'
-        }), 201
+        }), 201 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
     

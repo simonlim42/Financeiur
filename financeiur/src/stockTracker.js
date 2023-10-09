@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Line } from 'react-chartjs-2';
+import Chart from 'chart.js/auto';
 import 'chartjs-adapter-moment';
 import 'bootstrap/dist/css/bootstrap.min.css';
 function StockTracker() {
@@ -9,11 +10,11 @@ function StockTracker() {
   const [stockData, setStockData] = useState(null);
   const [priceSet, setPrice] = useState(null);
   const [chatIDSET, setChatID] = useState(null);
-  const [showBubbles, setShowBubbles] = useState(true);
+  const [showBubbles, setShowBubbles] = useState(true); // New state for toggle button
   // Define a function to fetch stock data from a server
   const fetchStockData = async () => {
     try {
-      // Send an HTTP GET request to a server with a symbol as a query parameter
+      // Send an HTTP GET request to a server (http://localhost:5000/api/stock-data) with a symbol as a query parameter
       const response = await axios.get(`http://localhost:5000/api/stock-data?symbol=${symbol}`);
 
       // Extract the response data
@@ -39,10 +40,10 @@ function StockTracker() {
 
       };
       // Validate the chat ID and symbol
-      if (!chatIDSET || !symbol) {
-        alert('Please enter a valid chat ID and symbol.');
-        return;
-      }
+    if (!chatIDSET || !symbol) {
+      alert('Please enter a valid chat ID and symbol.');
+      return;
+    }
       const response = await axios.post('http://localhost:5000/api/database-update', { postData })
         .then(response => {
           console.log('Database updated successfully:', response.data);
@@ -114,7 +115,7 @@ function StockTracker() {
                     datasets: [
                       {
                         label: 'Stock Prices',
-                        data: stockData.historical_prices, 
+                        data: stockData.historical_prices,
                         borderColor: 'rgba(75, 192, 192, 1)',
                         borderWidth: 1,
                         pointRadius: showBubbles ? 2 : 0,
