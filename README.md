@@ -1,6 +1,7 @@
 # Stock Market Alert System
 
 This project consists of a web application for tracking stock prices and a background task that periodically checks the stock prices against user-defined alerts and sends Telegram notifications when the stock prices meet the specified conditions.
+![image](https://github.com/simonlim42/Financeiur/assets/61169518/606fe95d-1c13-466a-ae9d-6793d1caa3c2)
 
 ## Backend (`backend.py`)
 
