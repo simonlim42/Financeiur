@@ -1,38 +1,149 @@
-.App {
-  text-align: center;
+.stock-tracker {
+  font-family: sans-serif;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.search-section {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.search-section input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-section button {
+  background-color: #42b72a;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.stock-price {
+  font-size: 48px;
+  font-weight: bold; 
+}
+.stock-data,
+.financial-metrics,
+.stock-details,
+.alert-section,
+.footer {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.stock-data h2,
+.financial-metrics h2,
+.stock-details h2,
+.alert-section h2,
+.footer h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.stock-data ul,
+.financial-metrics ul,
+.stock-details ul,
+.alert-section ul,
+.footer ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.stock-data li,
+.financial-metrics li,
+.stock-details li,
+.alert-section li,
+.footer li {
+  margin-bottom: 10px;
+}
+
+.chartjs-canvas {
+  margin-bottom: 20px;
+}
+
+/* Responsive design */
+
+@media (max-width: 768px) {
+  .stock-tracker {
+    width: 100%;
+  }
+
+  .search-section {
+    margin-bottom: 10px;
+  }
+
+  .stock-data,
+  .financial-metrics,
+  .stock-details,
+  .alert-section,
+  .footer {
+    margin-bottom: 10px;
+  }
+
+  .stock-data h2,
+  .financial-metrics h2,
+  .stock-details h2,
+  .alert-section h2,
+  .footer h2 {
+    font-size: 18px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* CSS for alert-section */
+
+.alert-section {
+  padding: 20px;
+  background-color: #f5f5f5;
 }
 
-.App-link {
-  color: #61dafb;
+.alert-section input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.alert-section button {
+  background-color: #42b72a;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* CSS for footer */
+
+.footer {
+  padding: 20px;
+  background-color: #222;
+  color: #fff;
+}
+
+.footer ul {
+  padding-left: 0;
+}
+
+.footer li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.footer li:last-child {
+  margin-right: 0;
+}
+
+.footer social-icons {
+  float: right;
 }
