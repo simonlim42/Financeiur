@@ -9,11 +9,11 @@ This project consists of a web application for tracking stock prices and a backg
 
 The backend of the application is built using Flask, a Python web framework. It provides two main API endpoints:
 
-### 1. `/api/stock-data` (GET)
+## 1. `/api/stock-data` (GET)
 
 This endpoint fetches detailed stock data based on the provided stock symbol using the Yahoo Finance API. It retrieves various information such as stock name, current price, historical data, financial metrics, and more.
 
-### 2. `/api/database-update` (POST)
+## 2. `/api/database-update` (POST)
 
 This endpoint receives data containing the stock symbol, price, and chat ID. It inserts this data into a PostgreSQL database. The database is used by the background task to track user-defined stock price alerts.
 
@@ -27,16 +27,14 @@ A Python script running as an asynchronous task periodically checks the PostgreS
 
 ### Getting Started
 
-1. **Clone the Repository:**
-
-   ```bash
-   git clone https://github.com/your-username/stock-market-alert.git
-   cd stock-market-alert
-2. **Install Dependencies:**
-   ```bash
-   pip install flask flask-cors yfinance psycopg2
-   npm install axios react-chartjs-2 chart.js react-bootstrap
-
+### 1. **Clone the Repository:**
+      ```bash
+      git clone https://github.com/your-username/stock-market-alert.git
+      cd stock-market-alert
+### 2. **Install Dependencies:**
+      ```bash
+      pip install flask flask-cors yfinance psycopg2
+      npm install axios react-chartjs-2 chart.js react-bootstrap
 ### 3. Run the Application:
 #### Start the Flask Backend:
       ```bash
