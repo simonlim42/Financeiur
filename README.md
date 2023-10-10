@@ -28,20 +28,15 @@ A Python script running as an asynchronous task periodically checks the PostgreS
 ### Getting Started
 
 ### 1. **Clone the Repository:**
-      ```bash
       git clone https://github.com/your-username/stock-market-alert.git
       cd stock-market-alert
 ### 2. **Install Dependencies:**
-      ```bash
       pip install flask flask-cors yfinance psycopg2
       npm install axios react-chartjs-2 chart.js react-bootstrap
 ### 3. Run the Application:
 #### Start the Flask Backend:
-      ```bash
       python backend.py
 #### Start the React Frontend (inside the project directory):
-     ```bash
      npm start
 #### Run the Background Task:
-      ```bash
      python alert_service.py
