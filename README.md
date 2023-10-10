@@ -25,7 +25,7 @@ The frontend is developed using React.js. It allows users to enter a stock symbo
 
 A Python script running as an asynchronous task periodically checks the PostgreSQL database for stock price alerts. If the current stock price exceeds the user-defined target price, it sends a Telegram notification to the specified chat ID using the Telegram API.
 
-## Getting Started
+### Getting Started
 
 1. **Clone the Repository:**
 
