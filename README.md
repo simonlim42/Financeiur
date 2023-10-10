@@ -15,7 +15,7 @@ This endpoint fetches detailed stock data based on the provided stock symbol usi
 
 ### 2. `/api/database-update` (POST)
 
-This endpoint receives data containing the stock symbol, price, and chat ID. It inserts this data into a PostgreSQL database named `Financeiur`. The database is used by the background task to track user-defined stock price alerts.
+This endpoint receives data containing the stock symbol, price, and chat ID. It inserts this data into a PostgreSQL database. The database is used by the background task to track user-defined stock price alerts.
 
 ## Frontend (`StockTracker.js`)
 
