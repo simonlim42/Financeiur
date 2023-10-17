@@ -1,4 +1,4 @@
-# Stock Market Alert System
+# Stock Pulse: Stock Market Alert System
 ![image](https://github.com/simonlim42/Stock-Tracker/assets/61169518/327d67d3-b821-4ca2-a7ad-38e79351146a)
 
 ## Introduction
