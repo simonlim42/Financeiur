@@ -1,4 +1,8 @@
 # Stock Pulse: Stock Market Alert System
+### YFinance issues!
+**Until further notice project is on hold.
+Still finding a solution.**
+https://github.com/ranaroussi/yfinance/issues/1729
 
 ## Introduction
 
