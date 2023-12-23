@@ -20,13 +20,19 @@ db_config = {
 
 def retrieve_stock_data(symbol):
     stock=yf.Ticker(symbol)
-    name = stock.info.get('shortName')
+    try:
+        name = stock.info.get('shortName')
+    except Exception as e:
+        print(e)
     current_price = stock.info.get('currentPrice')
     historical_data = stock.history(period='1y')
+    oldest_date = historical_data.index.min()
+    oldest_price_row = historical_data.loc[oldest_date]
+    oldest_price = oldest_price_row['Close']
     industry=stock.info.get('industry')
     longBusinessSummary=stock.info.get('longBusinessSummary')
     beta=stock.info.get('beta')
-
+    
     # Stock Price Information
     current_price = stock.info.get('currentPrice')
     previous_close = stock.info.get('previousClose')
@@ -66,6 +72,7 @@ def retrieve_stock_data(symbol):
     if not historical_data.empty:
         dates = historical_data.index.strftime('%Y-%m-%d').tolist()
         historical_prices = historical_data['Close'].tolist()
+        print(historical_prices)
         latest_data = historical_data.iloc[-1]  # Get the latest data point
         stock_data = {
             'name': name,
@@ -76,6 +83,7 @@ def retrieve_stock_data(symbol):
             'low': latest_data['Low'],
             'beta': beta,
             'dates': dates,
+            'oldest_price': oldest_price,
             'historical_prices': historical_prices,
             'industry': industry,
             'longBusinessSummary': longBusinessSummary,
@@ -103,7 +111,7 @@ def retrieve_stock_data(symbol):
             'sector': sector,
             'website': website
         }
-        print(stock_data)
+        
         return stock_data
     
 
@@ -114,6 +122,7 @@ def get_stock_data():
     try:
         # Fetch stock data using yfinance
         stock_data=retrieve_stock_data(symbol)
+        
         return jsonify(stock_data)
     except Exception as e:
         return jsonify({'error': str(e)})
