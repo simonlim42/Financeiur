@@ -13,10 +13,11 @@ const Topbar = ({ setSearchQuery }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
-  const [searchInput, setSearchInput] = useState('AAPL');
+  const [searchInput, setSearchInput] = useState("");
 const handleSearch = () =>{
   setSearchQuery(searchInput);
 }
+
   return (
     <Box display="flex" justifyContent="space-between" p={2}>
       {/* SEARCH BAR */}

@@ -7,6 +7,8 @@ import Topbar from "./scenes/global/Topbar";
 import Dashboard from "./scenes/dashboard/Dashboard";
 import Sidebar from "./scenes/global/Sidebar";
 import FAQ from "./faq/faq"
+import Tracker from "./scenes/tracker/Tracker";
+import CompanyMetrics from './scenes/information/CompanyMetrics';
 function App() {
   const [theme, colorMode] = useMode();
   const [isSidebar, setIsSidebar] = useState(true);
@@ -16,15 +18,15 @@ function App() {
       <ThemeProvider theme = {theme}>
         <CssBaseline />
         <div className="app">
-        <Sidebar isSidebar={isSidebar} />
+        <Sidebar isSidebar={isSidebar}/>
           <main className="content">
           <Topbar setIsSidebar={setIsSidebar} setSearchQuery={setSearchQuery}/>
-          <Routes>            
+          <Routes>           
             <Route path="/" element={<Dashboard searchQuery={searchQuery}/>}/>
+            <Route path="/company_metrics" element={<CompanyMetrics searchQuery={searchQuery}/>} ></Route>
+            <Route path="/tracker" element={<Tracker searchQuery={searchQuery}/>}/>
             <Route path="/faq" element={<FAQ />}/>
           </Routes>
-
-            {/* <StockTracker /> */}
           </main>
         </div>
       </ThemeProvider>
@@ -34,3 +36,4 @@ function App() {
 }
 
 export default App;
+

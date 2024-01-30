@@ -7,16 +7,19 @@ import { useContext } from "react";
 import { ColorModeContext, tokens } from "../../theme";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import HelpOutlinedIcon from "@mui/icons-material/HelpOutlined";
-import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
-import PieChartOutlinedIcon from "@mui/icons-material/PieChartOutlined";
-import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
+import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import NewspaperOutlinedIcon from '@mui/icons-material/NewspaperOutlined';
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
-    return (<MenuItem active={selected === title} style={{ color: colors.grey[100] }} onClick={() => setSelected(title)} icon={icon}>
+    return (
+    <MenuItem active={selected === title} 
+    style={{ color: colors.grey[100] }} 
+    onClick={() => setSelected(title)} 
+    icon={icon}>
         <Typography>{title}</Typography>
         <Link to={to} />
     </MenuItem>)
@@ -24,11 +27,12 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
 const Sidebar = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
-    const colorMode = useContext(ColorModeContext);
     const [isCollapsed, setIsCollapsed] = useState(false);
     const [selected, setSelected] = useState("Dashboard");
-    return (<Box
+    return (
+    <Box
         sx={{
+            
             "& .pro-sidebar-inner": {
                 background: `${colors.primary[400]} !important`,
             },
@@ -36,7 +40,7 @@ const Sidebar = () => {
                 backgroundColor: "transparent !important",
             },
             "& .pro-inner-item": {
-                padding: "5px 35px 5px 20px !important",
+                padding: "5px 35px 5px 18px !important",
             },
             "& .pro-inner-item:hover": {
                 color: "#868dfb !important",
@@ -45,8 +49,9 @@ const Sidebar = () => {
                 color: "#6870fa !important",
             },
         }}
+        height="100%"
     >
-        <ProSidebar collapsed={isCollapsed}>
+        <ProSidebar collapsed={isCollapsed} >
             <Menu iconShape="square">
                 {/* LOGO AND MENU ICON */}
                 <MenuItem
@@ -94,7 +99,7 @@ const Sidebar = () => {
                     <Typography
                         variant="h6"
                         color={colors.grey[300]}
-                        sx={{ m: "15px 0 5px 20px" }}>Hub</Typography>
+                        sx={{ m: "10px 0 10px 20px" }}>Hub</Typography>
                     <Item
                         title="Dashboard"
                         to="/"
@@ -104,8 +109,8 @@ const Sidebar = () => {
                     />
 
                     <Item
-                        title="News"
-                        to="/"
+                        title="Company specifics"
+                        to="/company_metrics"
                         icon={<NewspaperOutlinedIcon />}
                         selected={selected}
                         setSelected={setSelected}
@@ -113,25 +118,11 @@ const Sidebar = () => {
                     <Typography
                         variant="h6"
                         color={colors.grey[300]}
-                        sx={{ m: "15px 0 5px 20px" }}>Visuals</Typography>
+                        sx={{ m: "15px 0 5px 20px" }}>Tracker</Typography>
                     <Item
-                        title="Bar Chart"
-                        to="/"
-                        icon={<BarChartOutlinedIcon />}
-                        selected={selected}
-                        setSelected={setSelected}
-                    />
-                    <Item
-                        title="Pie Chart"
-                        to="/"
-                        icon={<PieChartOutlinedIcon />}
-                        selected={selected}
-                        setSelected={setSelected}
-                    />
-                    <Item
-                        title="Graph"
-                        to="/"
-                        icon={<TimelineOutlinedIcon />}
+                        title="Telegram"
+                        to="/tracker"
+                        icon={<SendOutlinedIcon />}
                         selected={selected}
                         setSelected={setSelected}
                     />

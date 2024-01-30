@@ -4,6 +4,7 @@ import { Line } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
 import 'chartjs-adapter-moment';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 function StockTracker() {
   // Define state variables using the useState hook
   const [symbol, setSymbol] = useState('AAPL');
@@ -44,7 +45,8 @@ function StockTracker() {
       alert('Please enter a valid chat ID and symbol.');
       return;
     }
-      const response = await axios.post('http://localhost:5000/api/database-update', { postData })
+    console.log("here");
+      const response = await axios.post('http://127.0.0.1:5000/api/database-update', { postData })
         .then(response => {
           console.log('Database updated successfully:', response.data);
         })
